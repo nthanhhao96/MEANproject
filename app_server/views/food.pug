@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1= 'Essential Foods for Tet holiday'
+    img(src='/images/food.jpg', alt='Food', style='float:right;width:300px;height:177px;')
+
+    ul
+        each thing in things
+            li= thing.eng + ': ' + thing.viet
+
+    br
+    br

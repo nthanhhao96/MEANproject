@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+html
+    head
+        title= 'Vietnamese New Year'
+        // Adding Bootstrap element
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", crossorigin="anonymous")
+
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        nav.site-header.sticky-top.py-1
+            .container.d-flex.flex-column.flex-md-row.justify-content-between
+                a.py-2(href='/')
+                    svg.d-block.mx-auto(xmlns='http://www.w3.org/2000/svg', width='24', height='24', viewbox='0 0 24 24', fill='none', stroke='currentColor', stroke-width='2', stroke-linecap='round', stroke-linejoin='round')
+                        circle(cx='12', cy='12', r='10')
+                        line(x1='14.31', y1='8', x2='20.05', y2='17.94')
+                        line(x1='9.69', y1='8', x2='21.17', y2='8')
+                        line(x1='7.38', y1='12', x2='13.12', y2='2.06')
+                        line(x1='9.69', y1='16', x2='3.95', y2='6.06')
+                        line(x1='14.31', y1='16', x2='2.83', y2='16')
+                        line(x1='16.62', y1='12', x2='10.88', y2='21.94')
+                a.py-2.d-none.d-md-inline-block(href='/food') Essential food
+                a.py-2.d-none.d-md-inline-block(href='/flowers') Flowers & plants
+                a.py-2.d-none.d-md-inline-block(href='/dates') Traditional dates
+
+        block content
+
+        footer.text-muted
+            .container
+                p.float-right
+                    a(href='#') Back to top
+                p © Thanh Hao Nguyen 2018
+
+        script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js", integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN", crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js", integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q", crossorigin="anonymous")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl", crossorigin="anonymous")
