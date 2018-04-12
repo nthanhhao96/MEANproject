@@ -1,17 +1,36 @@
+const request = require('request');
+const apiURL = require('./apiURLs');
 
 const list = function(req, res){
-    res.render('flowers',{
-        things:
-            [
-                {eng:'Peach flower', viet: 'Hoa dao', type :'Flower'},
-                {eng:'Ochna integerrima', viet: 'Hoa mai', type :'Flower'},
-                {eng:'Marumi kumquat', viet: 'Cay quat', type :'Plant'},
-                {eng:'Paperwhite flower', viet: 'Hoa thuy tien', type :'Flower'},
-                {eng:'Gladiolus', viet: 'Hoa lay on', type :'Flower'},
-                {eng:'Aroid Palm', viet:'Cay kim tien', type: 'Plant'},
-                {eng:'Camellia', viet: 'Hoa hai duong', type :'Flower'},
-                {eng:'Lucky Bamboo', viet:'Cay phat loc', type: 'Plant'}
-            ]});
+
+    const path = '/api/flowers';
+    const requestOptions = {
+        url : apiURL.server + path,
+        method : 'GET',
+        json : {},
+        qs : {}
+    };
+
+    request(
+        requestOptions,
+        function (err, response, body){
+            if (err){
+                res.render('error', {message: err.message});
+            }
+            else if (response.statusCode != 200){
+                res.render('error', {message: 'Error accessing API: ' + response.statusMessage + " ("+ response.statusCode + ")" });
+            }
+            else if (!(body instanceof Array)) {
+                res.render('error', {message: 'Unexpected response data'});
+            }
+            else if (!body.length){
+                res.render('error', {message: 'No documents in collection'});
+            }
+            else {
+                res.render('flowers', {things: body});
+            }
+        }
+    );
 };
 
 module.exports = {
