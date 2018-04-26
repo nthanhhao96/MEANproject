@@ -1,0 +1,12 @@
+extends layout
+
+block content
+        h2 New food
+        form(action='', method='post')
+            .form-group
+                label English name:
+                input.form-control(placeholder='Enter English name' name='eng')
+            .form-group
+                label Vietnamese name:
+                input.form-control(placeholder='Enter Vietnamese name' name='viet')
+            button.btn.btn-primary Add

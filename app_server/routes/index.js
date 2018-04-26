@@ -13,4 +13,19 @@ router.get('/food', ctrlFood.list);  // List of food
 router.get('/flowers', ctrlFlowers.list);  // List of flowers and plants
 router.get('/dates', ctrlDates.list);  // List of dates
 
+router
+    .route('/food/add')
+    .get(ctrlFood.showForm)  // Display the form
+    .post(ctrlFood.addData);  // Get form data and make the API call
+
+router
+    .route('/flowers/add')
+    .get(ctrlFlowers.showForm)  // Display the form
+    .post(ctrlFlowers.addData);  // Get form data and make the API call
+
+router
+    .route('/dates/add')
+    .get(ctrlDates.showForm)  // Display the form
+    .post(ctrlDates.addData);  // Get form data and make the API call
+
 module.exports = router;

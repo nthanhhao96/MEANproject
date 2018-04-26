@@ -1,0 +1,15 @@
+extends layout
+
+block content
+        h2 New date
+        form(action='', method='post')
+            .form-group
+                label English name:
+                input.form-control(placeholder='Enter English name' name='eng')
+            .form-group
+                label Vietnamese name:
+                input.form-control(placeholder='Enter Vietnamese name' name='viet')
+            .form-group
+                label Date:
+                input.form-control(placeholder='Enter the date' name='day')
+            button.btn.btn-primary Add

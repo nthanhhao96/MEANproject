@@ -1,13 +1,13 @@
 extends layout
 
 block content
-    h1= 'Some tradional dates in Tet holiday (all dates are in lunar calendar)'
+    h1= 'Some tradional dates in Tet holiday (Lunar calendar)'
     img(src='/images/ngaytet.jpg', alt='Food', style='float:right;width:300px;height:177px;')
 
     ul
         each thing in things
             li= thing.eng + ' (' + thing.viet + ') ' + ' : ' + thing.day
-
+    a(href='/dates/add') Add new date
     br
     br
 

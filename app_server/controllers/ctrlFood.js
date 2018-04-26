@@ -1,6 +1,36 @@
 const request = require('request');
 const apiURL = require('./apiURLs');
 
+const showForm = function(req, res) {
+    res.render('food_add');
+};
+
+const addData = function(req, res) {
+    const path = '/api/food';
+
+    const postdata = {
+        eng: req.body.eng,
+        viet: req.body.viet
+    };
+
+    const requestOptions = {
+        url : apiURL.server + path,
+        method : 'POST',
+        json : postdata
+    };
+
+    request(
+        requestOptions,
+        function (err, response){
+            if (response.statusCode === 201) {
+                res.redirect('/food');
+            } else {
+                res.render('error', {message: 'Error adding data: ' + response.statusMessage + ' (' + response.statusCode + ')'});
+            }
+        }
+    );
+};
+
 const list = function(req, res){
 
     const path = '/api/food';
@@ -34,5 +64,7 @@ const list = function(req, res){
 };
 
 module.exports = {
-    list
+    list,
+    showForm,
+    addData
 };
